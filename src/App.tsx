@@ -4,11 +4,19 @@ import reactLogo from './assets/react.svg'
 import viteLogo from './assets/vite.svg'
 import './App.css'
 
+// TODO: このファイルは Vite のテンプレートのままです。以下の順で自分のサイトに作り替える
+//   1. ヒーロー: 名前・肩書き・一言の自己紹介を置く
+//   2. About / Projects / Contact などのセクションを追加する
+//   3. 長くなってきたら src/components/ にセクションごとのコンポーネントを分ける
+//   4. 不要になったテンプレート用アセット(hero.png, react.svg, vite.svg)を削除する
+
 function App() {
+  // TODO: カウンターはデモ用なので削除する(useState の import も不要になる)
   const [count, setCount] = useState(0)
 
   return (
     <>
+      {/* TODO: ヒーロー画像を自分の写真やロゴに差し替え、alt に説明文を入れる */}
       <section id="center">
         <div className="hero">
           <img src={heroImg} className="base" width="170" height="179" alt="" />
@@ -17,6 +25,7 @@ function App() {
         </div>
         <div>
           <h1>ようこそ</h1>
+          {/* TODO: テンプレートの説明文を自己紹介文に置き換える */}
           <p>
             Edit <code>src/App.tsx</code> and save to test <code>HMR</code>
           </p>
@@ -32,6 +41,7 @@ function App() {
 
       <div className="ticks"></div>
 
+      {/* TODO: このセクションは Vite のリンク集。自分のプロジェクト一覧などに置き換える */}
       <section id="next-steps">
         <div id="docs">
           <svg className="icon" role="presentation" aria-hidden="true">
@@ -54,6 +64,8 @@ function App() {
             </li>
           </ul>
         </div>
+        {/* TODO: リンク先が Vite 公式のアカウントになっているので、自分の GitHub / X などに変更する */}
+        {/* 外部リンクには rel="noopener noreferrer" も付けておく */}
         <div id="social">
           <svg className="icon" role="presentation" aria-hidden="true">
             <use href="/icons.svg#social-icon"></use>

@@ -1,75 +1,23 @@
-# React + TypeScript + Vite
+# sh0g0-tech.github.io
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Vite + React + TypeScript で作った GitHub Pages サイトです。`main` に push すると GitHub Actions でビルドされ、https://sh0g0-tech.github.io/ に自動でデプロイされます。
 
-Currently, two official plugins are available:
+## 開発
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
-
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-
+```sh
+npm install
+npm run dev      # 開発サーバー
+npm run build    # 本番ビルド (dist/)
+npm run lint     # ESLint
 ```
 
-You can also install [eslint-plugin-react-x](https://npmx.dev/package/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://npmx.dev/package/eslint-plugin-react-dom) for React-specific lint rules:
+## 今後の改善ステップ
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-
-```
+1. **テンプレートの置き換え**: `src/App.tsx` のデモ内容(カウンター、Vite のリンク集)を自己紹介・プロジェクト一覧・連絡先に置き換える
+2. **HTML メタ情報**: `index.html` の `lang` を `ja` にし、`<title>`・`description`・OGP タグを設定する
+3. **不要ファイルの削除**: `src/assets/` のテンプレート画像、`public/icons.svg`、`App.css` の不要なスタイル
+4. **コンポーネント分割**: セクションごとに `src/components/` へ分ける
+5. **アクセシビリティ**: 画像の `alt`、外部リンクの `rel="noopener noreferrer"`、色のコントラストを確認する
+6. **スマホ表示の確認**: 実機で横幅の小さい画面のレイアウト崩れがないか確認する
+7. **CI の強化**: デプロイ前に `npm run lint` を実行する
+8. **(必要になったら)ルーティング**: ページを増やす場合は React Router と `404.html` の対応を追加する
