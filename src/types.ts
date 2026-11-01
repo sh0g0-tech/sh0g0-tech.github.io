@@ -1,11 +1,7 @@
 export type Item = {
     title: string
     description: string
-}
-
-export type FavoriteWord = {
-    text: string
-    meaning: string
+    image?: string
 }
 
 export type ContactLink = {
@@ -18,3 +14,7 @@ export type Hero = {
     introduction: string
 }
     
+export type NavItem = {
+    label: string
+    href: string
+}

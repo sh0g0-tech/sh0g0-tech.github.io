@@ -6,7 +6,7 @@ type HeroSectionProps = {
 
 function HeroSection({ hero }: HeroSectionProps) {
   return (
-    <section>
+    <section id="top">
       <h1>{hero.name}</h1>
       <p>{hero.introduction}</p>
     </section>
