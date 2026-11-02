@@ -4,7 +4,7 @@ type GreetingProps = {
 
 
 function Greeting({ name }: GreetingProps) {
-    return <p>こんにちは、{name}さん</p>
+    return <p>こんにちは！{name}さん</p>
     
 }
 
