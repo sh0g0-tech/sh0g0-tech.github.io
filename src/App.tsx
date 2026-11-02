@@ -16,7 +16,7 @@ function App() {
       <main>
         <HeroSection hero={hero} />
         <ItemList id="hobbies" heading="趣味" items={hobbies} />
-        <ItemList id="recently-watched" heading="ハマっているもの" items={recentlyWatched} />
+        <ItemList id="recently-watched" heading="ハマっている物" items={recentlyWatched} />
         <ItemList id="places" heading="好きな場所" items={places} />
         <ContactList id="contact" heading="連絡先" ContactLinks={contactLinks} />
       </main>
