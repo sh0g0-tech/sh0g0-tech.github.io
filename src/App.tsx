@@ -15,10 +15,10 @@ function App() {
       </header>
       <main>
         <HeroSection hero={hero} />
-        <ItemList id="hobbies" heading="趣味" items={hobbies} />
-        <ItemList id="recently-watched" heading="ハマっている物" items={recentlyWatched} />
-        <ItemList id="places" heading="好きな場所" items={places} />
-        <ContactList id="contact" heading="連絡先" ContactLinks={contactLinks} />
+        <ItemList id="hobbies" number="01" label="趣味" heading="趣味" items={hobbies} />
+        <ItemList id="recently-watched" number="02" label="最近ハマっている物" heading="ハマっている物" items={recentlyWatched} />
+        <ItemList id="places" number="03" label="好きな場所"heading="好きな場所" items={places} />
+        <ContactList id="contact" number="04" label="連絡先"heading="連絡先" ContactLinks={contactLinks} />
       </main>
     </>
   )

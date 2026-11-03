@@ -2,14 +2,17 @@ import type { ContactLink } from '../types'
 
 type ContactLinkProps = {
     id: string
+    number: string
+    label: string
     heading: string
     ContactLinks: ContactLink[]
 
 }
 
-function ContactList({ id, heading, ContactLinks }: ContactLinkProps) {
+function ContactList({ id, number, label, heading, ContactLinks }: ContactLinkProps) {
   return (
     <section id={id}>
+      <p className="section-number">{number} — {label}</p>
       <h2>{heading}</h2>
       <ul>
         {ContactLinks.map((ContactLink) => (

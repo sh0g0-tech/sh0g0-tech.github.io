@@ -40,8 +40,8 @@ export const recentlyWatched: Item[] = [
 
 export const navItems: NavItem[] = [
   { label: '趣味', href: '#hobbies' },
+  { label: 'ハマっている物', href: '#recently-watched' },
   { label: '好きな場所', href: '#places' },
-  { label: 'ハマっているもの', href: '#recently-watched' },
   { label: '連絡先', href: '#contact' },
 
 ]

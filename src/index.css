@@ -15,13 +15,30 @@ body {
   margin: 0;
   min-height: 100vh;
   background-color: var(--bg);
+  background-image:
+    radial-gradient(closest-side, rgba(124, 196, 255, 0.32), transparent),
+    radial-gradient(closest-side, rgba(138, 110, 255, 0.24), transparent),
+    linear-gradient(rgba(255, 255, 255, 0.055) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.055) 1px, transparent 1px);
+  background-size: 900px 700px, 800px 640px, 48px 48px, 48px 48px;
+  background-repeat: no-repeat, no-repeat, repeat, repeat;
+  background-position: 70% 0%, 0% 35%, 0 0, 0 0;
   color: var(--text);
   font-family: -apple-system, 'Hiragino Sans', 'Noto Sans JP', sans-serif;
   line-height: 1.8;
-    background-image:
-    linear-gradient(rgba(255, 255, 255, 0.055) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
-  background-size: 48px 48px;
+  animation: glowmove 12s ease-in-out infinite alternate;
+}
+
+@keyframes glowmove {
+  0%   { background-position: 70% 0%, 0% 35%, 0 0, 0 0; }
+  50%  { background-position: 95% 12%, 12% 45%, 0 0, 0 0; }
+  100% { background-position: 55% 6%, 6% 30%, 0 0, 0 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body {
+    animation: none;
+  }
 }
 
 a {
@@ -72,6 +89,11 @@ main section {
   margin: 0 0 16px;
   font-size: 64px;
   line-height: 1.2;
+  width: fit-content;
+  background: linear-gradient(90deg, #ffffff, var(--accent));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
 
 #top p {
@@ -114,6 +136,12 @@ section li p {
 section li:has(img) {
   flex-direction: column;
   align-items: stretch;
+  padding: 0 0 24px;
+  background: rgba(17, 20, 26, 0.8);
+  border: 1px solid #2a3140;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 24px 64px rgba(124, 196, 255, 0.07);
 }
 
 section li img {
@@ -123,6 +151,85 @@ section li img {
   border-radius: 12px;
 }
 
+section li:has(img) h3,
+section li:has(img) p {
+  padding: 0 24px;
+}
+
 section li:has(img) p {
   text-align: left;
+}
+
+.section-number {
+  margin: 0 0 8px;
+  color: var(--accent);
+  font-size: 13px;
+  letter-spacing: 0.1em;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-top: 36px;
+}
+
+.button {
+  padding: 12px 28px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  color: var(--text);
+}
+
+.button.primary {
+  border-color: var(--accent);
+  background: var(--accent);
+  color: var(--bg);
+  font-weight: 700;
+}
+
+a {
+  transition: color 0.2s;
+}
+
+a:hover {
+  color: #bfe3ff;
+}
+
+.button {
+  transition: transform 0.2s, background 0.2s, border-color 0.2s;
+}
+
+.button:hover {
+  transform: translateY(-2px);
+  border-color: var(--accent);
+}
+
+.button.primary:hover {
+  background: #bfe3ff;
+}
+
+section li:has(img) {
+  transition: transform 0.3s, border-color 0.3s;
+}
+
+section li:has(img):hover {
+  transform: translateY(-4px);
+  border-color: var(--accent);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body {
+    animation: none;
+  }
+
+   .button,
+  section li:has(img) {
+    transition: none;
+  }
+
+  .button:hover,
+  section li:has(img):hover {
+    transform: none;
+  }
 }
