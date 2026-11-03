@@ -26,7 +26,7 @@ export const places: Item[] = [
     {
         title: 'Switzerland',
         description: 'スイスは、アルプス山脈に囲まれた美しい国で、自然の景観や文化が豊かです。特に、チーズやチョコレート、時計などの製品で有名です。愛の不時着の聖地巡礼してきました！見てないけど、、、',
-　　　　　image: switzerland,
+        image: switzerland,
     },
 ]
 
