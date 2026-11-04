@@ -18,24 +18,27 @@ export const contactLinks: ContactLink[] = [
 
 export const hero: Hero = {
     name: '中島祥伍',
-    introduction: '⚪︎⚪︎××です。よろしくお願いします。',
+    introduction: '駆け出しエンジニアです。新しい技術を学ぶのが楽しくて、React と TypeScript で、このサイトを一から作りました。好きなことも、載せています。',
 
 }
 
 export const places: Item[] = [
     {
         title: 'Switzerland',
-        description: 'スイスは、アルプス山脈に囲まれた美しい国で、自然の景観や文化が豊かです。特に、チーズやチョコレート、時計などの製品で有名です。愛の不時着の聖地巡礼してきました！見てないけど、、、',
+        description: '雄大なアルプスの山々、透き通る湖、きれいな街並みなど自然がとにかく美しい国。また行きたい国の一つ',
         image: switzerland,
     },
 ]
 
 export const recentlyWatched: Item[] = [
     {
-        title: 'ドラマ　VIVANT',
-        description: '最近出演者がテレビによく出ているので、気になって見始めたらハマっちゃった'
-        
-    }
+        title: 'VIVANT',
+        description: '話題になっていたので何気なく見始めたら、続きが気になって一気見したのがきっかけ'        
+    },
+    {
+    title: 'ダウンタイム',
+    description: '美への執着、人間の欲望、お金、業界の裏側など、色々なことを考えさせられる作品'
+    },
 ]
 
 export const navItems: NavItem[] = [
